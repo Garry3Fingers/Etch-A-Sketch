@@ -1,0 +1,24 @@
+* {
+  box-sizing: border-box;
+}
+
+.container-grid {
+  height: 400px;
+  width: 400px;
+  /* border: 1px solid black; */
+  display: flex;
+  /* flex-flow: row wrap; */
+  flex-wrap: wrap;
+  /* place-content: stretch flex-start; */
+}
+
+.container-grid div {
+  flex: auto;
+  border: 1px solid black;
+  height: 25px;
+  width: 25px;
+}
+
+.flex-div {
+  background-color: black;
+}
