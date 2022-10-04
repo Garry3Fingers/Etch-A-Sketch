@@ -16,7 +16,44 @@
 
   <body>
 
-    <div class="container-grid"></div>
+    <div class="form-container">
+
+      <form>
+
+        <div>
+
+          <label for="horizontally">
+            Enter the number of squares for horizontal side of the grid:
+          </label>
+
+          <input type="number" name="horizontally" id="horizontally" min="10" 
+          max="100" step="1" placeholder="10-100" required>
+
+        </div>
+
+        <div>
+
+          <label for="vertically">
+            Enter the number of squares for vertical side of the grid:
+          </label>
+
+          <input type="number" name="horizontally" id="vertically" min="10" 
+          max="100" step="1" placeholder="10-100" required>
+
+        </div>
+
+        <div>
+          
+          <button type="submit">Submit</button>
+          <button type="reset">Reset</button>
+
+        </div>
+
+      </form>
+
+    </div>
+    
+    <div class="grid-container"></div>
 
   </body>
 
