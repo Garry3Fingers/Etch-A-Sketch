@@ -43,7 +43,8 @@ function draw() {
 
   gridDiv.forEach((div) => {
     div.addEventListener('mouseenter', () => {
-      div.className = 'grid-div';
+      //div.className = 'grid-div';
+      div.style.backgroundColor = `rgb(${randomNumber(255)}, ${randomNumber(255)}, ${randomNumber(255)})`;
     })
   });
 
@@ -64,3 +65,5 @@ function clearGrid() {
   gridContainer.style.width = '400px';
 
 };
+
+const randomNumber = (number) => Math.floor(Math.random() * (number + 1));
