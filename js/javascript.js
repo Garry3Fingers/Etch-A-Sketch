@@ -38,57 +38,31 @@ function createGrid(e) {
 };
 
 function draw() { 
-  
-//  const gridDiv = document.querySelectorAll('.grid-container div');
 
-  const test = document.getElementById('test').children;
+  const radioInput = document.querySelector('input[name="mode"]:checked').value;
 
-  const divChildren = [...test];
+  switch (true) { 
 
-  divChildren.forEach((div) => {
+    case (radioInput === 'black'): 
+      
+      drawBlackSquare();
+
+      break;    
     
-    div.style.backgroundColor = `rgba(0, 0, 0, 0)`;
-  
-  });
+    case (radioInput === 'random'):
 
-  divChildren.forEach((div) => { 
+      drawRandomColorSquare();
+      
+      break;
     
-    let opacity = +div.style.opacity;
-    
-    div.addEventListener('mouseover', () => {
-      
-      let newOpacity = sumNumber(opacity);
-      
-      if (opacity === 1) {
-        
-        newOpacity = '1';
-      
-      };
-      
-      div.style.backgroundColor = `rgba(0, 0, 0, ${newOpacity})`;
-      
-      opacity = newOpacity;
-      
-    });
-    
-    
-  });
-  
+    case (radioInput === 'shade'):
 
-  //  gridDiv.forEach((div) => {
-  //    div.addEventListener('mouseenter', () => {
-  //      //div.className = 'grid-div';
-  //      //div.style.backgroundColor = `rgb(${randomNumber(255)}, ${randomNumber(255)}, ${randomNumber(255)})`;
-      
-  //      let a = 0.1
-  //      div.style.backgroundColor = `rgba(0, 0, 0, ${a})`;
-       
-       
-  //      //a = sum(a);
-  //    });
+      drawShadingSquare();
 
-  //  });
-  
+      break;
+    
+  };
+
 };
 
 formContainer.addEventListener('reset', clearGrid);
@@ -110,3 +84,71 @@ function clearGrid() {
 const randomNumber = (number) => Math.floor(Math.random() * (number + 1));
 
 const sumNumber = (number) => number + 0.1;
+
+
+function drawShadingSquare() { 
+
+  const gridDiv = document.querySelectorAll('.grid-container div');
+  
+  gridDiv.forEach((div) => {
+
+    div.style.backgroundColor = `rgba(0, 0, 0, 0)`;
+
+  });
+
+  gridDiv.forEach((div) => {
+
+    let opacity = +div.style.opacity;
+
+    div.addEventListener('mouseover', () => {
+
+      let newOpacity = sumNumber(opacity);
+
+      if (opacity === 1) {
+
+        newOpacity = '1';
+
+      };
+
+      div.style.backgroundColor = `rgba(0, 0, 0, ${newOpacity})`;
+
+      opacity = newOpacity;
+
+    });
+
+  });
+
+};
+
+
+function drawRandomColorSquare() { 
+
+  const gridDiv = document.querySelectorAll('.grid-container div');
+
+  gridDiv.forEach((div) => {
+
+    div.addEventListener('mouseenter', () => {
+
+      div.style.backgroundColor = `rgb(${randomNumber(255)}, ${randomNumber(255)}, ${randomNumber(255)})`;
+
+    });
+
+  });
+
+};
+
+function drawBlackSquare() { 
+
+  const gridDiv = document.querySelectorAll('.grid-container div');
+
+  gridDiv.forEach((div) => {
+
+    div.addEventListener('mouseenter', () => {
+
+      div.className = 'grid-div';
+
+    });
+
+  });
+
+};
