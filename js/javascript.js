@@ -39,15 +39,56 @@ function createGrid(e) {
 
 function draw() { 
   
-  const gridDiv = document.querySelectorAll('.grid-container div');
+//  const gridDiv = document.querySelectorAll('.grid-container div');
 
-  gridDiv.forEach((div) => {
-    div.addEventListener('mouseenter', () => {
-      //div.className = 'grid-div';
-      div.style.backgroundColor = `rgb(${randomNumber(255)}, ${randomNumber(255)}, ${randomNumber(255)})`;
-    })
+  const test = document.getElementById('test').children;
+
+  const divChildren = [...test];
+
+  divChildren.forEach((div) => {
+    
+    div.style.backgroundColor = `rgba(0, 0, 0, 0)`;
+  
   });
 
+  divChildren.forEach((div) => { 
+    
+    let opacity = +div.style.opacity;
+    
+    div.addEventListener('mouseover', () => {
+      
+      let newOpacity = sumNumber(opacity);
+      
+      if (opacity === 1) {
+        
+        newOpacity = '1';
+      
+      };
+      
+      div.style.backgroundColor = `rgba(0, 0, 0, ${newOpacity})`;
+      
+      opacity = newOpacity;
+      
+    });
+    
+    
+  });
+  
+
+  //  gridDiv.forEach((div) => {
+  //    div.addEventListener('mouseenter', () => {
+  //      //div.className = 'grid-div';
+  //      //div.style.backgroundColor = `rgb(${randomNumber(255)}, ${randomNumber(255)}, ${randomNumber(255)})`;
+      
+  //      let a = 0.1
+  //      div.style.backgroundColor = `rgba(0, 0, 0, ${a})`;
+       
+       
+  //      //a = sum(a);
+  //    });
+
+  //  });
+  
 };
 
 formContainer.addEventListener('reset', clearGrid);
@@ -67,3 +108,5 @@ function clearGrid() {
 };
 
 const randomNumber = (number) => Math.floor(Math.random() * (number + 1));
+
+const sumNumber = (number) => number + 0.1;
