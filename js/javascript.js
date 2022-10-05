@@ -1,12 +1,5 @@
 const gridContainer = document.querySelector('.grid-container');
 
-// for (let i = 0; i < 256; i++) {
-//   let div = document.createElement('div');
-//   gridContainer.appendChild(div);
-// };
-
-
-
 const formContainer = document.querySelector('.form-container form');
 
 function getGridSize() {
@@ -40,12 +33,34 @@ function createGrid(e) {
   
   e.preventDefault();
 
+  draw();
+
 };
 
-const gridDiv = document.querySelectorAll('.grid-container div');
+function draw() { 
+  
+  const gridDiv = document.querySelectorAll('.grid-container div');
 
-gridDiv.forEach((div) => {
-  div.addEventListener('mouseenter', () => {
-    div.className = 'grid-div';
-  })
-});
+  gridDiv.forEach((div) => {
+    div.addEventListener('mouseenter', () => {
+      div.className = 'grid-div';
+    })
+  });
+
+};
+
+formContainer.addEventListener('reset', clearGrid);
+
+function clearGrid() {
+  
+  if (gridContainer.firstChild) {
+    
+    gridContainer.replaceChildren();
+
+  };
+
+  gridContainer.style.height = '400px';
+
+  gridContainer.style.width = '400px';
+
+};
