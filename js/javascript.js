@@ -1,9 +1,38 @@
+
+// Create the grid block and start the draw function
+
 const gridContainer = document.querySelector('.grid-container');
 
 const formContainer = document.querySelector('.form-container form');
 
-function getGridSize() {
+formContainer.addEventListener('submit', createGrid);
+
+
+function createGrid(e) { 
   
+  const [horizontal, vertical, numberSquares] = getGridSize();
+
+  gridContainer.style.height = `${vertical * 25}px`;
+
+  gridContainer.style.width = `${horizontal * 25}px`;
+
+  for (let i = 0; i < numberSquares; i++) {
+
+    let div = document.createElement('div');
+
+    gridContainer.appendChild(div);
+
+  };
+  
+  e.preventDefault();
+
+  draw();
+
+};
+
+
+function getGridSize() {
+
   const horizontalSquares = +document.getElementById('horizontally').value;
 
   const verticalSquares = +document.getElementById('vertically').value;
@@ -16,26 +45,8 @@ function getGridSize() {
 
 };
 
-formContainer.addEventListener('submit', createGrid);
 
-function createGrid(e) { 
-  
-  const [horizontal, vertical, numberSquares] = getGridSize();
-
-  gridContainer.style.height = `${vertical * 25}px`;
-
-  gridContainer.style.width = `${horizontal * 25}px`;
-
-  for (let i = 0; i < numberSquares; i++) {
-    let div = document.createElement('div');
-    gridContainer.appendChild(div);
-  };
-  
-  e.preventDefault();
-
-  draw();
-
-};
+// The draw block
 
 function draw() { 
 
@@ -65,21 +76,6 @@ function draw() {
 
 };
 
-formContainer.addEventListener('reset', clearGrid);
-
-function clearGrid() {
-  
-  if (gridContainer.firstChild) {
-    
-    gridContainer.replaceChildren();
-
-  };
-
-  gridContainer.style.height = '400px';
-
-  gridContainer.style.width = '400px';
-
-};
 
 const randomNumber = (number) => Math.floor(Math.random() * (number + 1));
 
@@ -129,13 +125,15 @@ function drawRandomColorSquare() {
 
     div.addEventListener('mouseenter', () => {
 
-      div.style.backgroundColor = `rgb(${randomNumber(255)}, ${randomNumber(255)}, ${randomNumber(255)})`;
+      div.style.backgroundColor = `rgb(${randomNumber(255)}, \
+      ${randomNumber(255)}, ${randomNumber(255)})`;
 
     });
 
   });
 
 };
+
 
 function drawBlackSquare() { 
 
@@ -150,5 +148,25 @@ function drawBlackSquare() {
     });
 
   });
+
+};
+
+
+// The reset block
+
+formContainer.addEventListener('reset', clearGrid);
+
+
+function clearGrid() {
+
+  if (gridContainer.firstChild) {
+
+    gridContainer.replaceChildren();
+
+  };
+
+  gridContainer.style.height = '400px';
+
+  gridContainer.style.width = '400px';
 
 };
