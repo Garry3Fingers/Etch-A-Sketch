@@ -176,3 +176,27 @@ function clearGrid() {
   gridContainer.style.width = '400px';
 
 };
+
+// JS styles event for buttons
+
+const eventBtn = document.querySelectorAll('button');
+
+eventBtn.forEach((btn) => {
+
+  btn.addEventListener('mousedown', (e) => {
+
+    e.target.style.border = '5px solid #6a33cf';
+
+  });
+
+});
+
+eventBtn.forEach((btn) => {
+
+  btn.addEventListener('mouseup', (e) => {
+
+    e.target.style.border = '2px solid #6a33cf';
+
+  });
+  
+});
