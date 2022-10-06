@@ -16,61 +16,71 @@
 
   <body>
 
+    <h1>Etch-A-Sketch</h1>
+
     <div class="form-container">
 
       <form>
 
-        <div>
+        <div class="input-container">
 
-          <label for="horizontally">
-            Enter the number of squares for horizontal side of the grid:
-          </label>
+          <div class="number-input">
 
-          <input type="number" name="horizontally" id="horizontally" min="10" 
-          max="100" step="1" placeholder="10-100" required>
+            <div>
 
-        </div>
+              <label for="horizontally">
+                Enter the number of squares for horizontal side of the grid:
+              </label>
 
-        <div>
+              <input type="number" name="horizontally" id="horizontally" min="10" 
+              max="100" step="1" placeholder="10-100" required>
 
-          <label for="vertically">
-            Enter the number of squares for vertical side of the grid:
-          </label>
+            </div>
 
-          <input type="number" name="horizontally" id="vertically" min="10" 
-          max="100" step="1" placeholder="10-100" required>
+            <div>
 
-        </div>
+              <label for="vertically">
+                Enter the number of squares for vertical side of the grid:
+              </label>
 
-        <div>
+              <input type="number" name="horizontally" id="vertically" min="10" 
+              max="100" step="1" placeholder="10-100" required>
 
-          Mode:
-
-          <div>
+            </div>
             
-            <label for="black">Black Color</label>
-
-            <input type="radio" name="mode" id="black" value="black" required>
-
           </div>
 
           <div>
-          
-            <label for="random">Random Color</label>
 
-            <input type="radio" name="mode" id="random" value="random" required>
+            Mode:
+
+            <div>
+              
+              <label for="black">Black Color</label>
+
+              <input type="radio" name="mode" id="black" value="black" required>
+
+            </div>
+
+            <div>
+            
+              <label for="random">Random Color</label>
+
+              <input type="radio" name="mode" id="random" value="random" required>
+
+            </div>
+
+            <div>
+            
+              <label for="shade">10% of Black</label>
+            
+              <input type="radio" name="mode" id="shade" value="shade" required>
+            
+            </div>
 
           </div>
 
-          <div>
-          
-            <label for="shade">10% of Black</label>
-          
-            <input type="radio" name="mode" id="shade" value="shade" required>
-          
-          </div>
-
-        </div>
+        </div>  
 
         <div>
           

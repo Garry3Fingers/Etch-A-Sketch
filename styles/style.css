@@ -1,16 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
 * {
   box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 22px;
+  margin: 0;
+  padding: 0;
 }
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  align-self: center;
+  font-size: 40px;
+  margin-top: 12px;
+}
+
+
+.form-container {
+  margin: 20px 0;
+  padding-left: 30px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.input-container {
+  display: flex;
+}
+
 
 .grid-container {
   height: 400px;
   width: 400px;
+  align-self: center;
   background-color: azure;
-  /* border: 1px solid black;  */
   display: flex;
-  /* flex-flow: row wrap; */
   flex-wrap: wrap;
-  /* place-content: stretch flex-start; */
 }
 
 .grid-container div {
@@ -24,7 +56,3 @@
   background-color: black;
 }
 
-/* .default-size {
-  height: 400px;
-  width: 400px;
-} */
