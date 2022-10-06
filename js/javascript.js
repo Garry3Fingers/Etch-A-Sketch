@@ -5,6 +5,8 @@ const gridContainer = document.querySelector('.grid-container');
 
 const formContainer = document.querySelector('.form-container form');
 
+const submitBtn = document.querySelector('button[type="submit"]');
+
 formContainer.addEventListener('submit', createGrid);
 
 
@@ -49,6 +51,8 @@ function getGridSize() {
 // The draw block
 
 function draw() { 
+
+  submitBtn.setAttribute('disabled', '');
 
   const radioInput = document.querySelector('input[name="mode"]:checked').value;
 
@@ -158,6 +162,8 @@ formContainer.addEventListener('reset', clearGrid);
 
 
 function clearGrid() {
+
+  submitBtn.removeAttribute('disabled', '');
 
   if (gridContainer.firstChild) {
 
