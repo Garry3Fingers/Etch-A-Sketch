@@ -14,9 +14,9 @@ function createGrid(e) {
   
   const [horizontal, vertical, numberSquares] = getGridSize();
 
-  gridContainer.style.height = `${vertical * 25}px`;
+  gridContainer.style.height = `${vertical * 10}px`;
 
-  gridContainer.style.width = `${horizontal * 25}px`;
+  gridContainer.style.width = `${horizontal * 10}px`;
 
   for (let i = 0; i < numberSquares; i++) {
 
@@ -171,9 +171,9 @@ function clearGrid() {
 
   };
 
-  gridContainer.style.height = '400px';
+  gridContainer.style.height = '';
 
-  gridContainer.style.width = '400px';
+  gridContainer.style.width = '';
 
 };
 
