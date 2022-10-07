@@ -91,10 +91,10 @@ button:hover,
   background-color: azure;
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: 20px;
 }
 
 .grid-container div {
-  flex: auto;
   height: 10px;
   width: 10px;
 }

@@ -13,3 +13,7 @@ I need to create a script that after user input drawing the grid with input's si
     3. Each pass just add another 10% of black to color
 
 - I need to use loops for creating the grid. Maybe array methods are too.     
+
+07.10.2022 
+
+Today evening I finished this project. Tomorrow I'll check js code for mistakes. My CSS is still simple. When I'm writing JS code, I google sometimes a lot. I don't know good or bad it. 

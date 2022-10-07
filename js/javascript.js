@@ -160,7 +160,6 @@ function drawBlackSquare() {
 
 formContainer.addEventListener('reset', clearGrid);
 
-
 function clearGrid() {
 
   submitBtn.removeAttribute('disabled', '');
