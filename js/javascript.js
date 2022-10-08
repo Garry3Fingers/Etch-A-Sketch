@@ -7,10 +7,17 @@ const formContainer = document.querySelector('.form-container form');
 
 const submitBtn = document.querySelector('button[type="submit"]');
 
+const h2Start = document.createElement('h2');
+
+h2Start.textContent = 'Click on the field to start drawing';
+
 formContainer.addEventListener('submit', createGrid);
 
+gridContainer.addEventListener('click', draw);
 
 function createGrid(e) { 
+
+  formContainer.appendChild(h2Start);
   
   const [horizontal, vertical, numberSquares] = getGridSize();
 
@@ -27,8 +34,6 @@ function createGrid(e) {
   };
   
   e.preventDefault();
-
-  draw();
 
 };
 
@@ -173,6 +178,8 @@ function clearGrid() {
   gridContainer.style.height = '';
 
   gridContainer.style.width = '';
+
+  formContainer.removeChild(formContainer.lastChild);
 
 };
 

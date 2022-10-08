@@ -84,6 +84,11 @@ button:hover,
   background-color: #30e1a0;
 }
 
+h2 {
+  text-align: center;
+  margin: 10;
+}
+
 /* Grid Block */
 
 .grid-container {
@@ -102,4 +107,3 @@ button:hover,
 .grid-div {
   background-color: black;
 }
-
