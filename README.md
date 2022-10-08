@@ -17,3 +17,9 @@ I need to create a script that after user input drawing the grid with input's si
 07.10.2022 
 
 Today evening I finished this project. Tomorrow I'll check js code for mistakes. My CSS is still simple. When I'm writing JS code, I google sometimes a lot. I don't know good or bad it. 
+
+08.10.2022
+
+Today I did small changes for the program. I added 'click event' to start a function, that start 'mouseenter event'. And when grid is creating, new element is appearing now. It need for describing conditions for drawing.
+
+This is the end.
