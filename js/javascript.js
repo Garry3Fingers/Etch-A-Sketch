@@ -97,15 +97,9 @@ function drawShadingSquare() {
   
   gridDiv.forEach((div) => {
 
-    div.style.backgroundColor = `rgba(0, 0, 0, 0)`;
-
-  });
-
-  gridDiv.forEach((div) => {
-
     let opacity = +div.style.opacity;
 
-    div.addEventListener('mouseover', () => {
+    div.addEventListener('mouseenter', () => {
 
       let newOpacity = sumNumber(opacity);
 
