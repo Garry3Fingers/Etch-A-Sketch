@@ -9,13 +9,13 @@ const submitBtn = document.querySelector('button[type="submit"]');
 
 const h2Start = document.createElement('h2');
 
-h2Start.textContent = 'Click on the field to start drawing';
-
 formContainer.addEventListener('submit', createGrid);
 
 gridContainer.addEventListener('click', draw);
 
 function createGrid(e) { 
+
+  h2Start.textContent = 'Click on the field to start drawing';
 
   formContainer.appendChild(h2Start);
   
@@ -173,7 +173,7 @@ function clearGrid() {
 
   gridContainer.style.width = '';
 
-  formContainer.removeChild(formContainer.lastChild);
+  h2Start.textContent = '';
 
 };
 
