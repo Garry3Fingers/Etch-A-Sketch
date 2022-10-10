@@ -57,6 +57,8 @@ function getGridSize() {
 
 function draw() { 
 
+  gridContainer.removeEventListener('click', draw);
+
   submitBtn.setAttribute('disabled', '');
 
   const radioInput = document.querySelector('input[name="mode"]:checked').value;
@@ -160,6 +162,8 @@ function drawBlackSquare() {
 formContainer.addEventListener('reset', clearGrid);
 
 function clearGrid() {
+
+  gridContainer.addEventListener('click', draw);
 
   submitBtn.removeAttribute('disabled', '');
 
